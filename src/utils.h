@@ -17,6 +17,7 @@ vector<int> getUnsortedVector();
 void printVector(vector<int> v);
 void quicksort(vector<int>& v, int l, int r);
 void swap(vector<int>& v, int x, int y);
+bool isVectorSorted(vector<int> v);
 
 
 #endif
