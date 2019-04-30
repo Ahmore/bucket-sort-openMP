@@ -5,7 +5,7 @@ using namespace std;
 vector <vector<vector < int>> >
 
 getBucketsStructure(int threads, int buckets) {
-    vector<int> v3(1, 0);
+    vector<int> v3(0, 0);
     vector <vector<int>> v2(buckets, v3);
     vector < vector < vector < int > > > v1(threads, v2);
 
