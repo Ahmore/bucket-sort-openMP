@@ -5,3 +5,6 @@
 
 ## Running
 ` ./main.exe <threads> <buckets> <algorithm> `
+
+## Running experiments with compilation
+`./run.sh`
