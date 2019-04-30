@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Print overall algorithm time
-    cout << (omp_get_wtime() - start_time) << "s; ";
+    cout << (omp_get_wtime() - start_time) << "; ";
 
     // Print result
     cout << (isVectorSorted(result) ? "SORTED" : "UNSORTED") << endl;
