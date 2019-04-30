@@ -24,7 +24,6 @@ void printBucketStructure(vector<vector<vector<int > > > v) {
 }
 
 vector<int> getUnsortedVector() {
-    // TODO: RAND SEED
     vector<int> v;
 
     for (int i = 0; i < ELEMENTS_AMOUNT; i++) {
