@@ -57,7 +57,7 @@ void quicksort(vector<int> &vec, int l, int r) {
             j--;
 
         if (i <= j) {
-            swap(vec, i, j); //error=swap function doesnt take 3 arguments
+            swap(vec, i, j);
             i++;
             j--;
         } else {
