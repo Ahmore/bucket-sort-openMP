@@ -4,10 +4,11 @@ using namespace std;
 vector<int> sort3(int threads, int buckets) {
     vector<vector<vector<int > > > bs = getBucketsStructure(threads, buckets);
     vector<int> v = getUnsortedVector();
-    
+    vector<int> result;
     const double bucket_interval = 100 / buckets;
     
     // Splitting into buckets
+    // #pragma omp for private(i j) shared(bs, v, bucket_interval) schedule(dynamic)
     for (int i = 0; i < v.size(); i++) {
         for (int j = 0; j < buckets; j++) {
             if (v[i] >= j*bucket_interval && v[i] <= (j+1)*bucket_interval) {
@@ -20,6 +21,7 @@ vector<int> sort3(int threads, int buckets) {
     }
     
     // Connecting buckets through threads and sorting into them
+    // #pragma omp for private(i j) schedule(dynamic)
     for (int i = 0; i < buckets; i++) {
         for (int j = 1; j < threads; j++) {
             bs[0][i].insert(bs[0][i].end(), bs[j][i].begin(), bs[j][i].end());    
@@ -29,7 +31,6 @@ vector<int> sort3(int threads, int buckets) {
     }
     
     // Concat buckets
-    vector<int> result;
     for (int i = 0; i < buckets; i++) {
         result.insert(result.end(), bs[0][i].begin(), bs[0][i].end()); 
     }
