@@ -9,7 +9,7 @@
 
 using namespace std;
 
-const int ELEMENTS_AMOUNT = 100000;
+const int ELEMENTS_AMOUNT = 1000000;
 
 vector<vector<vector<int> > > getBucketsStructure(int threads, int buckets);
 void printBucketStructure(vector<vector<vector<int> > > v);
