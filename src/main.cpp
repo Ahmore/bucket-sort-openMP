@@ -44,5 +44,5 @@ int main(int argc, char* argv[]) {
     cout << "Overall time: " << (omp_get_wtime() - start_time) << "s" << endl;
 
     // Print result
-    cout << isVectorSorted(result) ? "SORTED" : "UNSORTED") << endl;
+    cout << (isVectorSorted(result) ? "SORTED" : "UNSORTED") << endl;
 }

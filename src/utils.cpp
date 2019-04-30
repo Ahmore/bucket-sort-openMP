@@ -2,17 +2,15 @@
 
 using namespace std;
 
-vector <vector<vector < int>> >
-
-getBucketsStructure(int threads, int buckets) {
+vector<vector<vector<int > > > getBucketsStructure(int threads, int buckets) {
     vector<int> v3(0, 0);
-    vector <vector<int>> v2(buckets, v3);
-    vector < vector < vector < int > > > v1(threads, v2);
+    vector<vector<int > > v2(buckets, v3);
+    vector<vector<vector<int > > > v1(threads, v2);
 
     return v1;
 }
 
-void printBucketStructure(vector < vector < vector < int > > > v) {
+void printBucketStructure(vector<vector<vector<int > > > v) {
     for (int i = 0; i < v.size(); i++) {
         cout << "thread " << i << endl;
         for (int j = 0; j < v[i].size(); j++) {
@@ -26,6 +24,7 @@ void printBucketStructure(vector < vector < vector < int > > > v) {
 }
 
 vector<int> getUnsortedVector() {
+    // TODO: RAND SEED
     vector<int> v;
 
     for (int i = 0; i < ELEMENTS_AMOUNT; i++) {
@@ -45,6 +44,7 @@ void printVector(vector<int> v) {
 
 void quicksort(vector<int> &vec, int l, int r) {
     int i, j, mid, piv;
+    if (r <= l) return;
     i = l;
     j = r;
     mid = l + (r - l) / 2;
