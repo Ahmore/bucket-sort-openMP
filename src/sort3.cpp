@@ -15,7 +15,7 @@ vector<int> sort3(int threads, int buckets) {
     // Splitting into buckets
     splitting_start = omp_get_wtime();
 
-    #pragma omp parallel for shared(bs, v, bucket_interval) schedule(dynamic)
+    #pragma omp parallel for shared(bs, v, bucket_interval) schedule(static, v.size()/threads)
     for (int i = 0; i < v.size(); i++) {
         for (int j = 0; j < buckets; j++) {
             if (v[i] >= j*bucket_interval && v[i] <= (j+1)*bucket_interval) {
