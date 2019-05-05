@@ -11,7 +11,7 @@ using namespace std;
 
 const int ELEMENTS_AMOUNT = 1000000;
 
-vector<vector<vector<int> > > getBucketsStructure(int threads, int buckets);
+vector<vector<vector<int> > > getBucketsStructure(int threads, int buckets, bool reserved_memory);
 void printBucketStructure(vector<vector<vector<int> > > v);
 vector<int> getUnsortedVector();
 void printVector(vector<int> v);

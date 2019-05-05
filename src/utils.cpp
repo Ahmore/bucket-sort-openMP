@@ -2,8 +2,9 @@
 
 using namespace std;
 
-vector<vector<vector<int > > > getBucketsStructure(int threads, int buckets) {
-    vector<int> v3(0, 0);
+vector<vector<vector<int > > > getBucketsStructure(int threads, int buckets, bool reserved_memory) {
+    int default_size = reserved_memory ? ELEMENTS_AMOUNT : 0;
+    vector<int> v3(default_size, 0);
     vector<vector<int > > v2(buckets, v3);
     vector<vector<vector<int > > > v1(threads, v2);
 

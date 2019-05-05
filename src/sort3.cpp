@@ -3,7 +3,7 @@
 using namespace std;
 
 vector<int> sort3(int threads, int buckets) {
-    vector<vector<vector<int > > > bs = getBucketsStructure(threads, buckets);
+    vector<vector<vector<int > > > bs = getBucketsStructure(threads, buckets, false);
     vector<int> v = getUnsortedVector();
     vector<int> result;
     double bucket_interval = 100 / buckets;
